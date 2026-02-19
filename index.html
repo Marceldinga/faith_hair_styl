@@ -26,9 +26,10 @@
     body{
       margin:0;
       font-family:Poppins, Arial, sans-serif;
-      background: radial-gradient(1000px 500px at 20% 0%, rgba(58,12,163,.35), transparent 60%),
-                  radial-gradient(900px 450px at 80% 10%, rgba(255,77,141,.18), transparent 60%),
-                  var(--bg);
+      background:
+        radial-gradient(1000px 500px at 20% 0%, rgba(58,12,163,.35), transparent 60%),
+        radial-gradient(900px 450px at 80% 10%, rgba(255,77,141,.18), transparent 60%),
+        var(--bg);
       color:var(--text);
       line-height:1.55;
     }
@@ -273,7 +274,7 @@
     }
     .highlight b{ color:var(--gold); }
 
-    /* Gallery (SIDE-BY-SIDE) */
+    /* Gallery (photos + videos side-by-side) */
     .gallery-grid{
       display:grid;
       grid-template-columns: repeat(4, 1fr);
@@ -297,15 +298,14 @@
       transform: translateY(-3px);
       border-color: var(--border);
     }
-    .gallery-item img{
+    .gallery-item img,
+    .gallery-item video{
       width:100%;
       height:280px;
       object-fit:cover;
       display:block;
-      transition:.3s ease;
-      filter:saturate(1.05);
+      background:#000;
     }
-    .gallery-item img:hover{ transform:scale(1.05); }
 
     /* Footer */
     footer{
@@ -417,31 +417,58 @@
     </div>
   </section>
 
-  <!-- Gallery (8 images side-by-side) -->
+  <!-- Gallery (3 photos + 5 videos) -->
   <section>
     <h3 class="section-title">Gallery</h3>
-    <p class="section-sub">Explore our recent braid styles.</p>
+    <p class="section-sub">Explore our recent braid styles (photos + videos).</p>
 
     <div class="gallery-grid">
+      <!-- Photos -->
       <div class="gallery-item"><img src="braid1.jpg" alt="Braid 1"></div>
       <div class="gallery-item"><img src="braid2.jpg" alt="Braid 2"></div>
       <div class="gallery-item"><img src="braid3.jpg" alt="Braid 3"></div>
-      <div class="gallery-item"><img src="braid4.jpg" alt="Braid 4"></div>
-      <div class="gallery-item"><img src="braid5.jpg" alt="Braid 5"></div>
-      <div class="gallery-item"><img src="braid6.jpg" alt="Braid 6"></div>
-      <div class="gallery-item"><img src="braid7.jpg" alt="Braid 7"></div>
-      <div class="gallery-item"><img src="braid8.jpg" alt="Braid 8"></div>
+
+      <!-- Videos (rename files to match your repo if needed) -->
+      <div class="gallery-item">
+        <video controls preload="metadata">
+          <source src="braid4.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="gallery-item">
+        <video controls preload="metadata">
+          <source src="braid5.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="gallery-item">
+        <video controls preload="metadata">
+          <source src="braid6.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="gallery-item">
+        <video controls preload="metadata">
+          <source src="braid7.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="gallery-item">
+        <video controls preload="metadata">
+          <source src="braid8.mp4" type="video/mp4">
+        </video>
+      </div>
     </div>
   </section>
 
-  <!-- Video -->
+  <!-- Featured Video -->
   <section>
     <h3 class="section-title">Watch Our Work</h3>
     <p class="section-sub">A short preview video of our styling quality.</p>
 
     <div class="grid">
       <div class="card" style="grid-column: span 12;">
-        <video style="width:100%; border-radius:14px;" controls>
+        <video style="width:100%; border-radius:14px;" controls preload="metadata">
           <source src="OIG2.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
