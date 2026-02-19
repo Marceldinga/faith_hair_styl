@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Faith Hair Style</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -19,28 +18,28 @@
 }
 
 *{box-sizing:border-box;}
-
 body{
   margin:0;
-  font-family:Poppins, Arial, sans-serif;
+  font-family:Poppins, sans-serif;
   background:
-    radial-gradient(1000px 500px at 20% 0%, rgba(58,12,163,.35), transparent 60%),
-    radial-gradient(900px 450px at 80% 10%, rgba(255,77,141,.18), transparent 60%),
+    radial-gradient(900px 400px at 20% 0%, rgba(58,12,163,.35), transparent 60%),
+    radial-gradient(800px 400px at 80% 10%, rgba(255,77,141,.18), transparent 60%),
     var(--bg);
   color:var(--text);
   line-height:1.6;
 }
 
-/* HEADER */
+/* TOP BAR */
 .topbar{
   position:sticky;
   top:0;
-  background:rgba(0,0,0,.65);
+  background:rgba(0,0,0,.7);
   backdrop-filter:blur(10px);
-  padding:14px 20px;
+  padding:12px 20px;
   display:flex;
   justify-content:space-between;
   align-items:center;
+  flex-wrap:wrap;
   z-index:100;
 }
 
@@ -49,13 +48,19 @@ body{
   font-size:18px;
 }
 
+.top-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+
 .btn{
-  padding:10px 16px;
+  padding:8px 14px;
   border-radius:12px;
   text-decoration:none;
   font-weight:600;
-  margin-left:8px;
-  display:inline-block;
+  font-size:13px;
+  white-space:nowrap;
 }
 
 .btn-primary{
@@ -71,12 +76,12 @@ body{
 /* HERO */
 .hero{
   text-align:center;
-  padding:70px 20px 50px;
+  padding:50px 20px;
 }
 
 .hero h2{
-  font-size:42px;
-  margin-bottom:15px;
+  font-size:38px;
+  margin-bottom:10px;
 }
 
 .hero span{
@@ -84,22 +89,22 @@ body{
 }
 
 .hero p{
-  max-width:800px;
-  margin:auto;
   color:var(--muted);
+  max-width:900px;
+  margin:auto;
 }
 
-.pills{
-  margin-top:25px;
+.badges{
+  margin-top:20px;
 }
 
-.pill{
+.badge{
   display:inline-block;
-  padding:8px 14px;
-  margin:6px;
-  border-radius:999px;
   background:rgba(255,255,255,.08);
-  font-size:13px;
+  padding:6px 12px;
+  border-radius:999px;
+  font-size:12px;
+  margin:5px;
 }
 
 /* SECTIONS */
@@ -132,15 +137,6 @@ section{
   border-radius:16px;
 }
 
-.service-card h4{
-  margin:8px 0 5px;
-}
-
-.service-card p{
-  color:var(--muted);
-  font-size:14px;
-}
-
 /* GALLERY */
 .gallery{
   display:grid;
@@ -148,26 +144,19 @@ section{
   gap:18px;
 }
 
-.gallery img{
+.gallery img,
+.gallery video{
   width:100%;
-  height:350px;
+  height:340px;
   object-fit:cover;
   border-radius:16px;
+  background:#000;
   transition:.3s;
 }
 
-.gallery img:hover{
+.gallery img:hover,
+.gallery video:hover{
   transform:scale(1.05);
-}
-
-/* VIDEO */
-.video-wrapper{
-  margin-top:40px;
-}
-
-.video-wrapper video{
-  width:100%;
-  border-radius:16px;
 }
 
 /* FOOTER */
@@ -177,89 +166,88 @@ footer{
   border-top:1px solid rgba(255,255,255,.1);
   color:#aaa;
 }
+footer a{
+  color:var(--gold);
+  text-decoration:none;
+}
 </style>
 </head>
 
 <body>
 
+<!-- IMPORTANT ITEMS AT TOP -->
 <div class="topbar">
   <h1>Faith Hair Style</h1>
-  <div>
-    <a class="btn btn-primary" href="tel:3015419875">Call 301-541-9875</a>
-    <a class="btn btn-ghost" href="https://docs.google.com/forms/d/e/1FAIpQLSfkf9lkFDRYsrluiuuWqRFcuUZw_NRf_p8t3DL9snnkbt2dPg/viewform" target="_blank">Book Online</a>
+
+  <div class="top-actions">
+    <a class="btn btn-primary" href="tel:3015419875">📞 Call 301-541-9875</a>
+    <a class="btn btn-ghost" href="https://docs.google.com/forms/d/e/1FAIpQLSfkf9lkFDRYsrluiuuWqRFcuUZw_NRf_p8t3DL9snnkbt2dPg/viewform" target="_blank">📅 Book Online</a>
+    <a class="btn btn-ghost" href="https://www.instagram.com/faith_styl?igsh=bXY2ZXlwOHFvY3ph&utm_source=qr" target="_blank">Instagram</a>
+    <a class="btn btn-ghost" href="https://www.tiktok.com/@nfor.ako?_r=1&_t=ZP-942ioSCFsSs" target="_blank">TikTok</a>
   </div>
 </div>
 
 <div class="hero">
   <h2>Neat, long-lasting braids done with <span>care</span>.</h2>
+
   <p>
     Riverdale, Maryland • Open 8:00 AM – 10:30 PM<br><br>
     Knotless • Fulani • Boho • Cornrows • Soft Locs • Kids Braiding — clean parts, gentle hands, and a beautiful finish every time.
   </p>
 
-  <div class="pills">
-    <span class="pill">Neat Parts</span>
-    <span class="pill">No Tension</span>
-    <span class="pill">Clean Finish</span>
-    <span class="pill">Long-Lasting</span>
-    <span class="pill">Friendly Service</span>
+  <div class="badges">
+    <span class="badge">Neat Parts</span>
+    <span class="badge">No Tension</span>
+    <span class="badge">Clean Finish</span>
+    <span class="badge">Long-Lasting</span>
+    <span class="badge">Friendly Service</span>
   </div>
 </div>
 
 <section>
-  <h3 class="section-title">Location & Hours</h3>
-  <p><b>Location:</b> Riverdale, Maryland</p>
-  <p><b>Hours:</b> Monday – Sunday • 8:00 AM – 10:30 PM</p>
-  <p><b>Contact:</b> DM @faith_styl (Instagram)</p>
-  <p><b style="color:var(--gold);">We Provide Hair ✅</b><br>
-  Premium braiding hair available. No need to bring hair unless you prefer your own.</p>
-</section>
-
-<section>
   <h3 class="section-title">Services</h3>
   <p class="section-sub">
-    Choose your style — we’ll help you pick the best length, size, and color for your look.<br>
-    <b style="color:var(--gold);">Prices start at $80.</b>
+    Prices start at $80. Final price depends on size & length.
   </p>
 
   <div class="services">
-    <div class="service-card"><h4>Knotless Braids</h4><p>Lightweight, natural look, clean parts.</p></div>
-    <div class="service-card"><h4>Fulani Braids</h4><p>Classic Fulani patterns with optional beads.</p></div>
-    <div class="service-card"><h4>Boho Braids</h4><p>Soft, curly pieces for a trendy boho finish.</p></div>
-    <div class="service-card"><h4>Cornrows</h4><p>Neat, protective, and long-lasting styles.</p></div>
-    <div class="service-card"><h4>Senegalese Twists</h4><p>Smooth twists with a clean, elegant look.</p></div>
-    <div class="service-card"><h4>Soft Locs</h4><p>Beautiful loc styles with a soft feel.</p></div>
-    <div class="service-card"><h4>Kids Braiding</h4><p>Gentle styling for children — cute & neat.</p></div>
+    <div class="service-card"><b>Knotless Braids</b><br>Lightweight, natural look.</div>
+    <div class="service-card"><b>Fulani Braids</b><br>Classic patterns with beads.</div>
+    <div class="service-card"><b>Boho Braids</b><br>Soft curly trendy style.</div>
+    <div class="service-card"><b>Cornrows</b><br>Neat and protective.</div>
+    <div class="service-card"><b>Senegalese Twists</b><br>Smooth elegant twists.</div>
+    <div class="service-card"><b>Soft Locs</b><br>Beautiful soft loc styles.</div>
+    <div class="service-card"><b>Kids Braiding</b><br>Gentle styling for children.</div>
   </div>
 </section>
 
 <section>
   <h3 class="section-title">Gallery</h3>
-  <div class="gallery">
-    <img src="braid1.jpg" alt="">
-    <img src="braid2.jpg" alt="">
-    <img src="braid3.jpg" alt="">
-    <img src="braid4.jpg" alt="">
-    <img src="braid5.jpg" alt="">
-    <img src="braid6.jpg" alt="">
-    <img src="braid7.jpg" alt="">
-    <img src="braid8.jpg" alt="">
-  </div>
 
-  <div class="video-wrapper">
-    <h3 class="section-title">Watch Our Work</h3>
-    <video controls playsinline>
-      <source src="OIG2.mp4" type="video/mp4">
-    </video>
+  <div class="gallery">
+    <img src="braid1.jpg">
+    <img src="braid2.jpg">
+    <img src="braid3.jpg">
+    <img src="braid4.jpg">
+    <video controls playsinline><source src="braid5.mp4" type="video/mp4"></video>
+    <video controls playsinline><source src="braid6.mp4" type="video/mp4"></video>
+    <video controls playsinline><source src="braid7.mp4" type="video/mp4"></video>
+    <video controls playsinline><source src="braid8.mp4" type="video/mp4"></video>
   </div>
 </section>
 
+<section>
+  <h3 class="section-title">Watch Our Work</h3>
+  <video controls playsinline style="width:100%;border-radius:16px;">
+    <source src="OIG2.mp4" type="video/mp4">
+  </video>
+</section>
+
 <footer>
-  © 2026 Faith Hair Style • Built with GitHub Pages • 
-  <a href="https://www.instagram.com/faith_styl" target="_blank">@faith_styl</a> • 
-  <a href="https://www.tiktok.com/@nfor.ako" target="_blank">@nfor.ako</a>
+  © 2026 Faith Hair Style • Riverdale, Maryland • 
+  <a href="https://www.instagram.com/faith_styl?igsh=bXY2ZXlwOHFvY3ph&utm_source=qr" target="_blank">@faith_styl</a> • 
+  <a href="https://www.tiktok.com/@nfor.ako?_r=1&_t=ZP-942ioSCFsSs" target="_blank">@nfor.ako</a>
 </footer>
 
 </body>
 </html>
-
