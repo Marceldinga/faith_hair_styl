@@ -1,464 +1,265 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Faith Hair Style</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Faith Hair Style</title>
 
-  <!-- Font (GitHub Pages friendly) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    :root{
-      --bg:#0b0b10;
-      --text:#ffffff;
-      --muted:#cfcfe6;
-      --gold:#f8d210;
-      --pink:#ff4d8d;
-      --pink2:#ff2e7a;
-      --border:rgba(248,210,16,.18);
-      --shadow: 0 18px 50px rgba(0,0,0,.45);
-    }
+<style>
+:root{
+  --bg:#0b0b10;
+  --text:#ffffff;
+  --muted:#cfcfe6;
+  --gold:#f8d210;
+  --pink:#ff4d8d;
+  --pink2:#ff2e7a;
+}
 
-    *{ box-sizing:border-box; }
-    body{
-      margin:0;
-      font-family:Poppins, Arial, sans-serif;
-      background:
-        radial-gradient(1000px 500px at 20% 0%, rgba(58,12,163,.35), transparent 60%),
-        radial-gradient(900px 450px at 80% 10%, rgba(255,77,141,.18), transparent 60%),
-        var(--bg);
-      color:var(--text);
-      line-height:1.55;
-    }
+*{box-sizing:border-box;}
 
-    /* Top bar */
-    .topbar{
-      position:sticky;
-      top:0;
-      z-index:50;
-      backdrop-filter: blur(10px);
-      background: rgba(11,11,16,.70);
-      border-bottom:1px solid rgba(255,255,255,.06);
-    }
-    .topbar-inner{
-      max-width:1100px;
-      margin:auto;
-      padding:12px 16px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-    }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      min-width:0;
-    }
-    .logo{
-      width:38px; height:38px;
-      border-radius:12px;
-      background: linear-gradient(135deg, rgba(248,210,16,.95), rgba(255,77,141,.95));
-      box-shadow: 0 10px 30px rgba(255,77,141,.15);
-      flex:0 0 auto;
-    }
-    .brand h1{
-      font-size:16px;
-      margin:0;
-      font-weight:700;
-      letter-spacing:.2px;
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
-    }
-    .brand small{
-      display:block;
-      color:var(--muted);
-      font-size:11px;
-      margin-top:1px;
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
-    }
-    .actions{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      justify-content:flex-end;
-    }
+body{
+  margin:0;
+  font-family:Poppins, Arial, sans-serif;
+  background:
+    radial-gradient(1000px 500px at 20% 0%, rgba(58,12,163,.35), transparent 60%),
+    radial-gradient(900px 450px at 80% 10%, rgba(255,77,141,.18), transparent 60%),
+    var(--bg);
+  color:var(--text);
+  line-height:1.6;
+}
 
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:8px;
-      padding:10px 14px;
-      border-radius:12px;
-      text-decoration:none;
-      font-weight:700;
-      font-size:14px;
-      border:1px solid rgba(255,255,255,.10);
-      transition:.25s;
-      user-select:none;
-      white-space:nowrap;
-    }
-    .btn-primary{
-      background: linear-gradient(135deg, var(--pink), var(--pink2));
-      color:white;
-      box-shadow: 0 14px 40px rgba(255,77,141,.20);
-      border-color: rgba(255,255,255,.12);
-    }
-    .btn-primary:hover{ transform: translateY(-2px); }
-    .btn-ghost{
-      background: rgba(255,255,255,.06);
-      color:white;
-    }
-    .btn-ghost:hover{ background: rgba(255,255,255,.10); transform: translateY(-2px); }
+/* HEADER */
+.topbar{
+  position:sticky;
+  top:0;
+  background:rgba(0,0,0,.65);
+  backdrop-filter:blur(10px);
+  padding:14px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  z-index:100;
+}
 
-    /* Hero */
-    header.hero{
-      max-width:1100px;
-      margin: 0 auto;
-      padding: 54px 16px 10px;
-      display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap:18px;
-      align-items:stretch;
-    }
-    @media (max-width: 900px){
-      header.hero{ grid-template-columns:1fr; padding-top:24px; }
-    }
+.topbar h1{
+  margin:0;
+  font-size:18px;
+}
 
-    .hero-card{
-      background: linear-gradient(180deg, rgba(19,19,33,.85), rgba(16,16,26,.85));
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:20px;
-      padding:28px;
-      box-shadow: var(--shadow);
-      position:relative;
-      overflow:hidden;
-    }
-    .hero-card:before{
-      content:"";
-      position:absolute;
-      inset:-60px;
-      background: radial-gradient(400px 180px at 20% 20%, rgba(248,210,16,.16), transparent 60%),
-                  radial-gradient(450px 220px at 70% 30%, rgba(255,77,141,.12), transparent 60%);
-      pointer-events:none;
-    }
-    .hero-card > *{ position:relative; }
-    .hero-title{
-      margin:0;
-      font-size:44px;
-      line-height:1.05;
-      letter-spacing:-.5px;
-    }
-    .hero-title span{ color:var(--gold); }
-    .hero-sub{
-      margin:14px 0 18px;
-      color:var(--muted);
-      font-size:16px;
-      max-width:720px;
-    }
-    .pill-row{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin:14px 0 20px;
-    }
-    .pill{
-      padding:8px 12px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.06);
-      color:#fff;
-      font-size:13px;
-    }
-    .hero-cta{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-      margin-top:6px;
-    }
+.btn{
+  padding:10px 16px;
+  border-radius:12px;
+  text-decoration:none;
+  font-weight:600;
+  margin-left:8px;
+  display:inline-block;
+}
 
-    .info-card{
-      background: rgba(19,19,33,.70);
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:20px;
-      padding:22px;
-      box-shadow: var(--shadow);
-    }
-    .info-card h3{
-      margin:0 0 10px;
-      font-size:16px;
-      color:var(--gold);
-    }
-    .info-card p{
-      margin:8px 0;
-      color:var(--muted);
-      font-size:14px;
-    }
-    .info-card b{ color:#fff; }
+.btn-primary{
+  background:linear-gradient(135deg,var(--pink),var(--pink2));
+  color:white;
+}
 
-    /* Sections */
-    section{
-      max-width:1100px;
-      margin: 0 auto;
-      padding: 34px 16px;
-    }
-    .section-title{
-      margin:0 0 14px;
-      font-size:22px;
-      letter-spacing:-.2px;
-    }
-    .section-sub{
-      margin:0 0 18px;
-      color:var(--muted);
-      font-size:14px;
-      max-width:780px;
-    }
+.btn-ghost{
+  background:rgba(255,255,255,.08);
+  color:white;
+}
 
-    .grid{
-      display:grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap:14px;
-    }
-    .card{
-      background: rgba(19,19,33,.78);
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:18px;
-      padding:18px;
-      box-shadow: 0 10px 30px rgba(0,0,0,.28);
-      transition:.25s;
-    }
-    .card:hover{
-      transform: translateY(-3px);
-      border-color: var(--border);
-    }
+/* HERO */
+.hero{
+  text-align:center;
+  padding:70px 20px 50px;
+}
 
-    /* Services cards */
-    .service{
-      grid-column: span 4;
-      display:flex;
-      gap:12px;
-      align-items:flex-start;
-    }
-    @media (max-width: 900px){ .service{ grid-column: span 6; } }
-    @media (max-width: 520px){ .service{ grid-column: span 12; } }
+.hero h2{
+  font-size:42px;
+  margin-bottom:15px;
+}
 
-    .icon{
-      width:42px; height:42px;
-      border-radius:14px;
-      background: rgba(248,210,16,.14);
-      border:1px solid rgba(248,210,16,.22);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-weight:900;
-      color:var(--gold);
-      flex:0 0 auto;
-    }
-    .service h4{ margin:0; font-size:15px; }
-    .service p{ margin:6px 0 0; color:var(--muted); font-size:13px; }
+.hero span{
+  color:var(--gold);
+}
 
-    /* Highlight block */
-    .highlight{
-      grid-column: span 12;
-      background: linear-gradient(135deg, rgba(58,12,163,.35), rgba(255,77,141,.14));
-      border:1px solid rgba(255,255,255,.10);
-      border-radius:18px;
-      padding:18px;
-    }
-    .highlight b{ color:var(--gold); }
+.hero p{
+  max-width:800px;
+  margin:auto;
+  color:var(--muted);
+}
 
-    /* Gallery (UPDATED to match YOUR current repo files) */
-    .gallery-grid{
-      display:grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap:16px;
-    }
-    @media (max-width: 900px){
-      .gallery-grid{ grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 520px){
-      .gallery-grid{ grid-template-columns: 1fr; }
-    }
-    .gallery-item{
-      background: rgba(19,19,33,.78);
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:16px;
-      overflow:hidden;
-      box-shadow: 0 10px 25px rgba(0,0,0,.35);
-      transition:.25s;
-    }
-    .gallery-item:hover{
-      transform: translateY(-3px);
-      border-color: var(--border);
-    }
-    .gallery-item img{
-      width:100%;
-      height:280px;
-      object-fit:cover;
-      display:block;
-      background:#000;
-    }
+.pills{
+  margin-top:25px;
+}
 
-    /* Footer */
-    footer{
-      max-width:1100px;
-      margin: 0 auto;
-      padding: 28px 16px 42px;
-      color:#a7a7c3;
-      border-top:1px solid rgba(255,255,255,.06);
-      text-align:center;
-    }
-    footer a{ color:var(--gold); text-decoration:none; }
-  </style>
+.pill{
+  display:inline-block;
+  padding:8px 14px;
+  margin:6px;
+  border-radius:999px;
+  background:rgba(255,255,255,.08);
+  font-size:13px;
+}
+
+/* SECTIONS */
+section{
+  max-width:1100px;
+  margin:auto;
+  padding:50px 20px;
+}
+
+.section-title{
+  font-size:24px;
+  margin-bottom:15px;
+}
+
+.section-sub{
+  color:var(--muted);
+  margin-bottom:25px;
+}
+
+/* SERVICES */
+.services{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+
+.service-card{
+  background:rgba(19,19,33,.8);
+  padding:20px;
+  border-radius:16px;
+}
+
+.service-card h4{
+  margin:8px 0 5px;
+}
+
+.service-card p{
+  color:var(--muted);
+  font-size:14px;
+}
+
+/* GALLERY */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:18px;
+}
+
+.gallery img{
+  width:100%;
+  height:350px;
+  object-fit:cover;
+  border-radius:16px;
+  transition:.3s;
+}
+
+.gallery img:hover{
+  transform:scale(1.05);
+}
+
+/* VIDEO */
+.video-wrapper{
+  margin-top:40px;
+}
+
+.video-wrapper video{
+  width:100%;
+  border-radius:16px;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:30px;
+  border-top:1px solid rgba(255,255,255,.1);
+  color:#aaa;
+}
+</style>
 </head>
 
 <body>
 
-  <!-- Sticky Top Bar -->
-  <div class="topbar">
-    <div class="topbar-inner">
-      <div class="brand">
-        <div class="logo" aria-hidden="true"></div>
-        <div>
-          <h1>Faith Hair Style</h1>
-          <small>Riverdale, Maryland • Open 8:00 AM – 10:30 PM</small>
-        </div>
-      </div>
+<div class="topbar">
+  <h1>Faith Hair Style</h1>
+  <div>
+    <a class="btn btn-primary" href="tel:3015419875">Call 301-541-9875</a>
+    <a class="btn btn-ghost" href="https://docs.google.com/forms/d/e/1FAIpQLSfkf9lkFDRYsrluiuuWqRFcuUZw_NRf_p8t3DL9snnkbt2dPg/viewform" target="_blank">Book Online</a>
+  </div>
+</div>
 
-      <div class="actions">
-        <a class="btn btn-primary"
-           href="https://docs.google.com/forms/d/e/1FAIpQLSfkf9lkFDRYsrluiuuWqRFcuUZw_NRf_p8t3DL9snnkbt2dPg/viewform"
-           target="_blank" rel="noopener noreferrer">
-          Book Online
-        </a>
+<div class="hero">
+  <h2>Neat, long-lasting braids done with <span>care</span>.</h2>
+  <p>
+    Riverdale, Maryland • Open 8:00 AM – 10:30 PM<br><br>
+    Knotless • Fulani • Boho • Cornrows • Soft Locs • Kids Braiding — clean parts, gentle hands, and a beautiful finish every time.
+  </p>
 
-        <a class="btn btn-ghost" href="https://www.instagram.com/faith_styl" target="_blank" rel="noopener noreferrer">
-          Instagram
-        </a>
+  <div class="pills">
+    <span class="pill">Neat Parts</span>
+    <span class="pill">No Tension</span>
+    <span class="pill">Clean Finish</span>
+    <span class="pill">Long-Lasting</span>
+    <span class="pill">Friendly Service</span>
+  </div>
+</div>
 
-        <a class="btn btn-ghost" href="https://www.tiktok.com/@nfor.ako?_r=1&_t=ZP-942ioSCFsSs" target="_blank" rel="noopener noreferrer">
-          TikTok
-        </a>
+<section>
+  <h3 class="section-title">Location & Hours</h3>
+  <p><b>Location:</b> Riverdale, Maryland</p>
+  <p><b>Hours:</b> Monday – Sunday • 8:00 AM – 10:30 PM</p>
+  <p><b>Contact:</b> DM @faith_styl (Instagram)</p>
+  <p><b style="color:var(--gold);">We Provide Hair ✅</b><br>
+  Premium braiding hair available. No need to bring hair unless you prefer your own.</p>
+</section>
 
-        <!-- Optional: Call button (works on mobile) -->
-        <a class="btn btn-ghost" href="tel:4058458002">Call</a>
-      </div>
-    </div>
+<section>
+  <h3 class="section-title">Services</h3>
+  <p class="section-sub">
+    Choose your style — we’ll help you pick the best length, size, and color for your look.<br>
+    <b style="color:var(--gold);">Prices start at $80.</b>
+  </p>
+
+  <div class="services">
+    <div class="service-card"><h4>Knotless Braids</h4><p>Lightweight, natural look, clean parts.</p></div>
+    <div class="service-card"><h4>Fulani Braids</h4><p>Classic Fulani patterns with optional beads.</p></div>
+    <div class="service-card"><h4>Boho Braids</h4><p>Soft, curly pieces for a trendy boho finish.</p></div>
+    <div class="service-card"><h4>Cornrows</h4><p>Neat, protective, and long-lasting styles.</p></div>
+    <div class="service-card"><h4>Senegalese Twists</h4><p>Smooth twists with a clean, elegant look.</p></div>
+    <div class="service-card"><h4>Soft Locs</h4><p>Beautiful loc styles with a soft feel.</p></div>
+    <div class="service-card"><h4>Kids Braiding</h4><p>Gentle styling for children — cute & neat.</p></div>
+  </div>
+</section>
+
+<section>
+  <h3 class="section-title">Gallery</h3>
+  <div class="gallery">
+    <img src="braid1.jpg" alt="">
+    <img src="braid2.jpg" alt="">
+    <img src="braid3.jpg" alt="">
+    <img src="braid4.jpg" alt="">
+    <img src="braid5.jpg" alt="">
+    <img src="braid6.jpg" alt="">
+    <img src="braid7.jpg" alt="">
+    <img src="braid8.jpg" alt="">
   </div>
 
-  <!-- Hero -->
-  <header class="hero">
-    <div class="hero-card">
-      <h2 class="hero-title">Neat, long-lasting braids done with <span>care</span>.</h2>
-      <p class="hero-sub">
-        Knotless • Fulani • Boho • Cornrows • Soft Locs • Kids Braiding — clean parts, gentle hands, and a beautiful finish every time.
-      </p>
+  <div class="video-wrapper">
+    <h3 class="section-title">Watch Our Work</h3>
+    <video controls playsinline>
+      <source src="OIG2.mp4" type="video/mp4">
+    </video>
+  </div>
+</section>
 
-      <div class="pill-row">
-        <div class="pill">Neat Parts</div>
-        <div class="pill">No Tension</div>
-        <div class="pill">Clean Finish</div>
-        <div class="pill">Long-Lasting</div>
-        <div class="pill">Friendly Service</div>
-      </div>
-
-      <div class="hero-cta">
-        <a class="btn btn-primary"
-           href="https://docs.google.com/forms/d/e/1FAIpQLSfkf9lkFDRYsrluiuuWqRFcuUZw_NRf_p8t3DL9snnkbt2dPg/viewform"
-           target="_blank" rel="noopener noreferrer">Book Appointment</a>
-
-        <a class="btn btn-ghost" href="https://www.instagram.com/faith_styl" target="_blank" rel="noopener noreferrer">DM on Instagram</a>
-
-        <a class="btn btn-ghost" href="https://www.tiktok.com/@nfor.ako?_r=1&_t=ZP-942ioSCFsSs" target="_blank" rel="noopener noreferrer">TikTok</a>
-
-        <!-- Optional: Text button -->
-        <a class="btn btn-ghost" href="sms:4058458002">Text</a>
-      </div>
-    </div>
-
-    <div class="info-card">
-      <h3>Location & Hours</h3>
-      <p><b>Location:</b> Riverdale, Maryland</p>
-      <p><b>Hours:</b> Monday – Sunday • 8:00 AM – 10:30 PM</p>
-      <p><b>Contact:</b> DM <b>@faith_styl</b> (Instagram)</p>
-      <p style="margin-top:14px;"><b style="color:var(--gold);">We Provide Hair ✅</b><br>
-        <span style="color:var(--muted);">Premium braiding hair available. No need to bring hair unless you prefer your own.</span>
-      </p>
-    </div>
-  </header>
-
-  <!-- Services -->
-  <section>
-    <h3 class="section-title">Services</h3>
-    <p class="section-sub">
-      Choose your style — we’ll help you pick the best length, size, and color for your look.
-      <br><b style="color:var(--gold);">Prices start at $80.</b> (Final price depends on size & length.)
-    </p>
-
-    <div class="grid">
-      <div class="card service"><div class="icon">K</div><div><h4>Knotless Braids</h4><p>Lightweight, natural look, clean parts.</p></div></div>
-      <div class="card service"><div class="icon">F</div><div><h4>Fulani Braids</h4><p>Classic Fulani patterns with optional beads.</p></div></div>
-      <div class="card service"><div class="icon">B</div><div><h4>Boho Braids</h4><p>Soft, curly pieces for a trendy boho finish.</p></div></div>
-      <div class="card service"><div class="icon">C</div><div><h4>Cornrows</h4><p>Neat, protective, and long-lasting styles.</p></div></div>
-      <div class="card service"><div class="icon">S</div><div><h4>Senegalese Twists</h4><p>Smooth twists with a clean, elegant look.</p></div></div>
-      <div class="card service"><div class="icon">L</div><div><h4>Soft Locs</h4><p>Beautiful loc styles with a soft feel.</p></div></div>
-      <div class="card service"><div class="icon">K</div><div><h4>Kids Braiding</h4><p>Gentle styling for children — cute & neat.</p></div></div>
-
-      <div class="highlight">
-        <b>We provide hair:</b> Premium quality braiding hair available for most styles.
-        If you prefer to bring your own hair, that’s also okay.
-      </div>
-    </div>
-  </section>
-
-  <!-- Booking -->
-  <section>
-    <h3 class="section-title">Booking</h3>
-    <p class="section-sub">Click “Book Online” to request your date & time. We confirm appointments as quickly as possible.</p>
-
-    <div class="grid">
-      <div class="card" style="grid-column: span 12;">
-        <b style="color:var(--gold);">Fast Booking:</b> Fill out our booking form and we will confirm within 24 hours. <br><br>
-        <a class="btn btn-primary"
-           href="https://docs.google.com/forms/d/e/1FAIpQLSfkf9lkFDRYsrluiuuWqRFcuUZw_NRf_p8t3DL9snnkbt2dPg/viewform"
-           target="_blank" rel="noopener noreferrer">Book Online</a>
-
-        <a class="btn btn-ghost" href="https://www.instagram.com/faith_styl" target="_blank" rel="noopener noreferrer" style="margin-left:10px;">DM on Instagram</a>
-        <a class="btn btn-ghost" href="https://www.tiktok.com/@nfor.ako?_r=1&_t=ZP-942ioSCFsSs" target="_blank" rel="noopener noreferrer" style="margin-left:10px;">TikTok</a>
-        <a class="btn btn-ghost" href="tel:4058458002" style="margin-left:10px;">Call</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Gallery (UPDATED: uses your real JPGs) -->
-  <section>
-    <h3 class="section-title">Gallery</h3>
-    <p class="section-sub">Explore our recent braid styles.</p>
-
-    <div class="gallery-grid">
-      <div class="gallery-item"><img src="braid5.jpg" alt="Braid Style 5"></div>
-      <div class="gallery-item"><img src="braid6.jpg" alt="Braid Style 6"></div>
-      <div class="gallery-item"><img src="braid7.jpg" alt="Braid Style 7"></div>
-      <div class="gallery-item"><img src="braid8.jpg" alt="Braid Style 8"></div>
-    </div>
-  </section>
-
-  <footer>
-    © <span id="year"></span> Faith Hair Style • Built with GitHub Pages •
-    <a href="https://www.instagram.com/faith_styl" target="_blank" rel="noopener noreferrer">@faith_styl</a> •
-    <a href="https://www.tiktok.com/@nfor.ako?_r=1&_t=ZP-942ioSCFsSs" target="_blank" rel="noopener noreferrer">@nfor.ako</a>
-  </footer>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+<footer>
+  © 2026 Faith Hair Style • Built with GitHub Pages • 
+  <a href="https://www.instagram.com/faith_styl" target="_blank">@faith_styl</a> • 
+  <a href="https://www.tiktok.com/@nfor.ako" target="_blank">@nfor.ako</a>
+</footer>
 
 </body>
 </html>
+
